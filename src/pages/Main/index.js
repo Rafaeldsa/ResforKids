@@ -1,11 +1,9 @@
 import React from "react";
 
-import Quiz from "../Quiz";
-
 const Main = () => {
   return (
     <div id="container">
-      <Quiz />
+      <h1>ResForKids</h1>
     </div>
   );
 };

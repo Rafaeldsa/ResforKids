@@ -9,20 +9,14 @@ import {
 import axios from "axios";
 import torre from "../../assets/torre.png";
 import { Jumbotron, Container, Row, Col } from "react-bootstrap";
+import data from "./data.json";
 import useSound from "use-sound";
 import musica from "../../assets/whatever.mp3";
 import ResponsivePlayer from "../../Components/ResponsivePlayer";
 
 const Main = () => {
+  const imagem = "http://resbackimagens.herokuapp.com/imagens/ok.png";
   const [play] = useSound(musica);
-  const [data, setData] = useState([]);
-
-  async function loadingJson() {
-    let response = await fetch("../../assets/data.json");
-    let dados = await response.json();
-
-    setData(dados);
-  }
 
   function download() {
     axios({
@@ -71,6 +65,7 @@ const Main = () => {
         <Jumbotron bsPrefix="containerPergunta">
           <Jumbotron id="item1"></Jumbotron>
           <Jumbotron id="item2">
+            <p>{data[0].pergunta}</p>
             <button id="audioPergunta">
               <FiVolume2 onClick={play} />
             </button>
@@ -81,7 +76,7 @@ const Main = () => {
           <Row>
             <label for="01">
               <input type="radio" name="opcao" id="01" value="01" />
-              <img src={torre} alt="Masculino" />
+              <img src={data[0].opcao1img} alt="Masculino" />
               <div>
                 <button id="audioResposta" onClick={play}>
                   <FiVolume2 />
@@ -90,7 +85,7 @@ const Main = () => {
             </label>
             <label for="02">
               <input type="radio" name="opcao" id="02" value="02" />
-              <img src={torre} alt="Feminino" />
+              <img src={data[0].opcao1img} alt="Feminino" />
               <div>
                 <button id="audioResposta" onClick={play}>
                   <FiVolume2 />
@@ -101,7 +96,7 @@ const Main = () => {
           <Row>
             <label for="03">
               <input type="radio" name="opcao" id="03" value="03" />
-              <img src={torre} alt="Masculino" />
+              <img src={data[0].opcao1img} alt="Masculino" />
               <div>
                 <button id="audioResposta" onClick={play}>
                   <FiVolume2 />
@@ -110,7 +105,7 @@ const Main = () => {
             </label>
             <label for="04">
               <input type="radio" name="opcao" id="04" value="04" />
-              <img src={torre} alt="Feminino" />
+              <img src={data[0].opcao1img} alt="Feminino" />
               <div>
                 <button id="audioResposta" onClick={play}>
                   <FiVolume2 />
@@ -156,15 +151,6 @@ const Main = () => {
             </Col>
           </Row>
         </Container>
-        <ul>
-          {data.map(function (quiz) {
-            return (
-              <li>
-                {quiz.pergunta} - {quiz.resposta}
-              </li>
-            );
-          })}
-        </ul>
       </Jumbotron>
     </Jumbotron>
   );

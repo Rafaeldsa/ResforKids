@@ -8,8 +8,8 @@
 
 #item1 img {
   background-color: red;
-  width: 100px;
-  height: 100px;
+  width: 10rem;
+  height: 10rem;
 }
 
 #item2 {
@@ -20,17 +20,26 @@
 
 .containerResposta {
   display: grid;
-  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  grid-template-columns: repeat(1, minmax(250px, 1fr));
   grid-template-rows: 10vh 10vh;
   grid-gap: 75px;
+  align-items: center;
+  margin-left: 8rem;
+}
+.containerResposta label {
+  margin-top: 3rem;
+  padding: 2rem;
+}
+.containerResposta label p {
+  margin-left: 3.2rem;
 }
 .containerResposta label > input {
   visibility: hidden;
 }
 
 .containerResposta label > img {
-  width: 100px;
-  height: 100px;
+  width: 10rem;
+  height: 10rem;
 }
 
 .containerResposta label > input + img {

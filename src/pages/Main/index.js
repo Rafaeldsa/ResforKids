@@ -29,28 +29,23 @@ const Main = () => {
   }
 
   return (
-    <Jumbotron id="container">
-      <header>
+    <Jumbotron id="container-principal" className="container">
+      <header id="header">
         <h1>Res for kids</h1>
       </header>
 
       <Jumbotron id="conteudo">
-        <Container bsPrefix="container">
-          <Row>
-            <Col className="item1">
-              <button id="Beolica"></button>
-              <a href="#eolica" id="Teolica">
-                Energia Eólica
-              </a>
-            </Col>
-            <Col className="item2">
-              <button id="Bsolar"></button>
-              <a href="#solar" id="Tsolar">
-                Energia Solar
-              </a>
-            </Col>
-          </Row>
-        </Container>
+        <div className="container-ancora">
+          <button id="Beolica"></button>
+          <a href="#eolica" id="Teolica">
+            Energia Eólica
+          </a>
+
+          <button id="Bsolar"></button>
+          <a href="#solar" id="Tsolar">
+            Energia Solar
+          </a>
+        </div>
 
         <h1 id="eolica">Energia Eólica</h1>
         <ResponsivePlayer url="https://www.youtube.com/watch?v=4NRXx6U8ABQ" />

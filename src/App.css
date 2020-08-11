@@ -2,6 +2,8 @@
   --primary-color: #34cb79;
   --title-color: #322153;
   --text-color: #6c6c80;
+
+  font-size: 60%;
 }
 
 * {
@@ -10,16 +12,33 @@
   box-sizing: border-box;
 }
 
+html,
+body,
+#root {
+  height: 100vh;
+  background: #ffa500;
+}
+
 body {
   background: #ffa500;
   -webkit-font-smoothing: antialiased;
   color: var(--text-color);
 }
 
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 body,
 input,
 button {
-  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font: 500 1.6rem Poppins;
+}
+
+.container {
+  width: 10vw;
+  max-width: 700px;
 }
 
 h1,
@@ -30,5 +49,11 @@ h5,
 h6,
 a {
   color: var(--title-color);
-  font-family: Ubuntu;
+  font-family: Poppins;
+}
+
+@media (min-width: 700px) {
+  :root {
+    font-size: 62.5%;
+  }
 }

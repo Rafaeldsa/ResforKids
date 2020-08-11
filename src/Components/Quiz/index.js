@@ -52,40 +52,24 @@ const Quiz = ({ quizId }) => {
           <label htmlFor="01">
             <input type="radio" name="opcao" id="01" value="01" />
             <img src={imagemPergunta[0]} alt="Masculino" />
-            <div>
-              <button id="audioResposta" onClick={audio}>
-                <FiVolume2 />
-              </button>
-            </div>
+            <p>olaaaa</p>
           </label>
           <label htmlFor="02">
             <input type="radio" name="opcao" id="02" value="02" />
             <img src={imagemPergunta[0]} alt="Feminino" />
-            <div>
-              <button id="audioResposta" onClick={audio}>
-                <FiVolume2 />
-              </button>
-            </div>
+            <p>olaaaa</p>
           </label>
         </Row>
         <Row>
           <label htmlFor="03">
             <input type="radio" name="opcao" id="03" value="03" />
             <img src={imagemPergunta[0]} alt="Masculino" />
-            <div>
-              <button id="audioResposta" onClick={audio}>
-                <FiVolume2 />
-              </button>
-            </div>
+            <p>olaaaa</p>
           </label>
           <label htmlFor="04">
             <input type="radio" name="opcao" id="04" value="04" />
             <img src={imagemPergunta[0]} alt="Feminino" />
-            <div>
-              <button id="audioResposta" onClick={audio}>
-                <FiVolume2 />
-              </button>
-            </div>
+            <p>olaaaa</p>
           </label>
         </Row>
       </Container>

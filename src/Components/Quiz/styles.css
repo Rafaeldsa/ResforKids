@@ -2,8 +2,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 20vh;
-  padding: 10px;
-  column-gap: 20px;
+
+  column-gap: 1rem;
+  margin-bottom: 15rem;
 }
 
 #item1 img {
@@ -13,9 +14,25 @@
 }
 
 #item2 {
-  background-color: blue;
-  width: 450px;
-  height: 100px;
+  width: 20rem;
+  height: 10rem;
+}
+#item2 p {
+  font-size: 2rem;
+}
+
+#item2 button {
+  border-radius: 5rem;
+  width: 4.17rem;
+  height: 3.66rem;
+  background: #fff;
+  border: 0.2rem solid black;
+  color: black;
+  font-weight: bold;
+  float: right;
+
+  margin-right: 3rem;
+  cursor: pointer;
 }
 
 .containerResposta {
@@ -82,97 +99,4 @@
   margin-top: 40px;
   transition: background-color 0.2s;
   cursor: pointer;
-}
-
-@media (max-width: 375px) {
-  .containerResposta {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 50px 50px;
-    margin-bottom: 20px;
-  }
-
-  #audioPergunta {
-    width: 40px;
-    height: 35px;
-    background: #fff;
-    border-radius: 8px;
-    color: black;
-    font-weight: bold;
-    float: right;
-    border: 0;
-
-    cursor: pointer;
-  }
-
-  #audioResposta {
-    width: 40px;
-    height: 35px;
-    background: #fff;
-    border-radius: 8px;
-    color: black;
-    font-weight: bold;
-    float: right;
-    border: 0;
-    justify-self: center;
-    cursor: pointer;
-  }
-
-  #audioResposta2 {
-    width: 40px;
-    height: 35px;
-    background: #fff;
-    border-radius: 8px;
-    color: black;
-    font-weight: bold;
-    float: right;
-    border: 0;
-    justify-self: center;
-    cursor: pointer;
-  }
-
-  div#item1 img {
-    background-color: red;
-    width: 70px;
-    height: 70px;
-  }
-
-  div#item2 {
-    background-color: red;
-    width: 200px;
-    height: 70px;
-  }
-
-  .acoes {
-    margin-top: 50px;
-  }
-
-  #anterior {
-    width: 20vh;
-    height: 56px;
-    background: #f6b53c;
-    border-radius: 8px;
-    color: #fff;
-    font-weight: bold;
-    font-size: 16px;
-    border: 0;
-    margin-top: 40px;
-
-    cursor: pointer;
-  }
-
-  #proxima {
-    width: 20vh;
-    height: 56px;
-    background: #f6b53c;
-    border-radius: 8px;
-    color: #fff;
-    font-weight: bold;
-    font-size: 16px;
-    border: 0;
-    margin-top: 40px;
-    margin-right: 5px;
-    transition: background-color 0.2s;
-    cursor: pointer;
-  }
 }

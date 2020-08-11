@@ -73,7 +73,11 @@ a#Tsolar {
   margin-top: 5rem;
 }
 #quiz {
-  font-size: 32px;
+  font-size: 3.33rem;
+}
+
+.container-desenhos {
+  background-color: blue;
 }
 
 #download {

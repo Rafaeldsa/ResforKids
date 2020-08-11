@@ -76,44 +76,6 @@ a#Tsolar {
   font-size: 32px;
 }
 
-/**
-#conteudo form button {
-  width: 260px;
-  height: 56px;
-  background: #f6b53c;
-  border-radius: 8px;
-  color: #fff;
-  font-weight: bold;
-  font-size: 16px;
-  border: 0;
-  align-self: flex-end;
-  margin-top: 40px;
-  transition: background-color 0.2s;
-  cursor: pointer;
-}
-
-.items-grid {
-  display: grid;
-  list-style: none;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
-
-#conteudo button {
-  width: 260px;
-  height: 56px;
-  background: #f6b53c;
-  border-radius: 8px;
-  color: #fff;
-  font-weight: bold;
-  font-size: 16px;
-  border: 0;
-  margin-top: 40px;
-  transition: background-color 0.2s;
-  cursor: pointer;
-}
-*/
-
 #download {
   width: 20rem;
   height: 5rem;
@@ -129,5 +91,5 @@ a#Tsolar {
 }
 
 h1#quiz {
-  padding: 20px;
+  padding: 2.08rem;
 }

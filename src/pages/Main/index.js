@@ -48,12 +48,12 @@ const Main = () => {
         </div>
 
         <h1 id="eolica">Energia Eólica</h1>
-        <ResponsivePlayer url="https://www.youtube.com/watch?v=4NRXx6U8ABQ" />
+        <ResponsivePlayer url="https://www.youtube.com/watch?v=B69rVmtIg34" />
 
         <h1 id="quiz">Quiz</h1>
 
         <Quiz quizId={2} />
-
+        <h1>Desenhos</h1>
         <Container>
           <Row>
             <Col>

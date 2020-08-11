@@ -152,6 +152,38 @@ h1#quiz {
 
 /*media queries*/
 @media (max-width: 768px) {
+  #container {
+    background: #ffa500;
+  }
+  #conteudo {
+    padding: 12px;
+    max-width: 340px;
+    margin-bottom: 25px;
+  }
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+  button#Beolica {
+    margin-top: 6px;
+  }
+  button#Bsolar {
+    margin-top: 6px;
+  }
+  a#Teolica {
+    width: 60px;
+  }
+
+  a#Tsolar {
+    width: 60px;
+  }
+
+  .container .item2 {
+    justify-self: start;
+  }
+
+  #download {
+    width: 150px;
+  }
 }
 
 @media (max-width: 375px) {

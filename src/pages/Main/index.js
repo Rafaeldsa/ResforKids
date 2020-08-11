@@ -1,33 +1,28 @@
-import React, { useState } from "react";
-import "./styles.css";
-import {
-  FiArrowDownCircle,
-  FiArrowLeft,
-  FiArrowRight,
-  FiVolume2,
-} from "react-icons/fi";
-import axios from "axios";
-import torre from "../../assets/torre.png";
-import { Jumbotron, Container, Row, Col } from "react-bootstrap";
-import data from "./data.json";
-import useSound from "use-sound";
-import musica from "../../assets/whatever.mp3";
-import ResponsivePlayer from "../../Components/ResponsivePlayer";
+import React, { useState, useEffect } from 'react';
+import './styles.css';
+import { FiArrowDownCircle } from 'react-icons/fi';
+import api from '../../services/api';
+import axios from 'axios';
+import { Jumbotron, Container, Row, Col } from 'react-bootstrap';
+import data from './data.json';
+import useSound from 'use-sound';
+import musica from '../../assets/whatever.mp3';
+import ResponsivePlayer from '../../Components/ResponsivePlayer';
+import Quiz from '../../Components/Quiz';
 
 const Main = () => {
-  const imagem = "http://resbackimagens.herokuapp.com/imagens/ok.png";
   const [play] = useSound(musica);
 
   function download() {
     axios({
-      url: "https://resbackend.herokuapp.com/download", //your url
-      method: "GET",
-      responseType: "blob", // important
+      url: 'https://resbackend.herokuapp.com/download', //your url
+      method: 'GET',
+      responseType: 'blob', // important
     }).then((response) => {
       const url = window.URL.createObjectURL(new Blob([response.data]));
-      const link = document.createElement("a");
+      const link = document.createElement('a');
       link.href = url;
-      link.setAttribute("download", "desenho.jpg"); //or any other extension
+      link.setAttribute('download', 'desenho.jpg'); //or any other extension
       document.body.appendChild(link);
       link.click();
     });
@@ -36,7 +31,7 @@ const Main = () => {
   return (
     <Jumbotron id="container">
       <header>
-        <h1>RES for Kids</h1>
+        <h1>Res for kids</h1>
       </header>
 
       <Jumbotron id="conteudo">
@@ -62,80 +57,12 @@ const Main = () => {
 
         <h1 id="quiz">Quiz</h1>
 
-        <Jumbotron bsPrefix="containerPergunta">
-          <Jumbotron id="item1"></Jumbotron>
-          <Jumbotron id="item2">
-            <p>{data[0].pergunta}</p>
-            <button id="audioPergunta">
-              <FiVolume2 onClick={play} />
-            </button>
-          </Jumbotron>
-        </Jumbotron>
-
-        <Container bsPrefix="containerResposta">
-          <Row>
-            <label for="01">
-              <input type="radio" name="opcao" id="01" value="01" />
-              <img src={data[0].opcao1img} alt="Masculino" />
-              <div>
-                <button id="audioResposta" onClick={play}>
-                  <FiVolume2 />
-                </button>
-              </div>
-            </label>
-            <label for="02">
-              <input type="radio" name="opcao" id="02" value="02" />
-              <img src={data[0].opcao1img} alt="Feminino" />
-              <div>
-                <button id="audioResposta" onClick={play}>
-                  <FiVolume2 />
-                </button>
-              </div>
-            </label>
-          </Row>
-          <Row>
-            <label for="03">
-              <input type="radio" name="opcao" id="03" value="03" />
-              <img src={data[0].opcao1img} alt="Masculino" />
-              <div>
-                <button id="audioResposta" onClick={play}>
-                  <FiVolume2 />
-                </button>
-              </div>
-            </label>
-            <label for="04">
-              <input type="radio" name="opcao" id="04" value="04" />
-              <img src={data[0].opcao1img} alt="Feminino" />
-              <div>
-                <button id="audioResposta" onClick={play}>
-                  <FiVolume2 />
-                </button>
-              </div>
-            </label>
-          </Row>
-        </Container>
-
-        <Container bsPrefix="acoes">
-          <Row>
-            <Col>
-              <button id="anterior" onClick={() => {}}>
-                <FiArrowLeft />
-                <strong>Anterior</strong>
-              </button>
-            </Col>
-            <Col>
-              <button id="proxima" onClick={() => {}}>
-                <strong>Próxima</strong>
-                <FiArrowRight />
-              </button>
-            </Col>
-          </Row>
-        </Container>
+        <Quiz quizId={2} />
 
         <Container>
           <Row>
             <Col>
-              {" "}
+              {' '}
               <button id="download" onClick={download}>
                 <strong>Desenho_01</strong>
                 <FiArrowDownCircle />

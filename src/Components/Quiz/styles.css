@@ -4,11 +4,10 @@
   grid-template-rows: 20vh;
 
   column-gap: 1rem;
-  margin-bottom: 15rem;
+  margin-bottom: 5rem;
 }
 
 #item1 img {
-  background-color: red;
   width: 10rem;
   height: 10rem;
 }
@@ -30,7 +29,6 @@
   color: black;
   font-weight: bold;
   float: right;
-
   margin-right: 3rem;
   cursor: pointer;
 }
@@ -39,12 +37,12 @@
   display: grid;
   grid-template-columns: repeat(1, minmax(250px, 1fr));
   grid-template-rows: 10vh 10vh;
-  grid-gap: 75px;
+  grid-gap: 10rem;
   align-items: center;
-  margin-left: 8rem;
+  margin: 1rem;
 }
 .containerResposta label {
-  margin-top: 3rem;
+  margin-top: 1.6rem;
   padding: 2rem;
 }
 .containerResposta label p {
@@ -61,42 +59,43 @@
 
 .containerResposta label > input + img {
   cursor: pointer;
-  border: 4px solid #eee;
-  border-radius: 15px;
-  padding: 10px;
+  border: 0.42rem solid #eee;
+  border-radius: 1.6rem;
+  padding: 1.4rem;
 }
 .containerResposta label > input:checked + img {
-  border: 4px solid #3f51b5;
+  border: 0.42rem solid #3f51b5;
 }
 
 .acoes {
-  margin-top: 15px;
+  margin-top: 5rem;
 }
 
 #anterior {
-  width: 260px;
-  height: 56px;
+  width: 10rem;
+  height: 5rem;
   background: #f6b53c;
   border-radius: 8px;
   color: #fff;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 1.8rem;
   border: 0;
-  margin-top: 40px;
-
+  margin-top: 3rem;
+  margin-left: 3rem;
   cursor: pointer;
 }
 
 #proxima {
-  width: 260px;
-  height: 56px;
+  width: 10rem;
+  height: 5rem;
   background: #f6b53c;
   border-radius: 8px;
   color: #fff;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 1.8rem;
   border: 0;
-  margin-top: 40px;
+  margin-top: 3rem;
+  margin-left: 1rem;
   transition: background-color 0.2s;
   cursor: pointer;
 }

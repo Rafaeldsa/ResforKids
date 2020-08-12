@@ -75,7 +75,13 @@ a#Tsolar {
 #quiz {
   font-size: 3.33rem;
 }
-
+.container-desenhos {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 10vh 10vh;
+  align-items: left;
+  justify-items: left;
+}
 #download {
   width: 20rem;
   height: 5rem;
@@ -85,7 +91,7 @@ a#Tsolar {
   font-weight: bold;
   font-size: 1.6rem;
   border: 0;
-  margin-top: 2rem;
+  margin-top: 0rem;
   transition: background-color 0.2s;
   cursor: pointer;
   margin-right: 20rem;

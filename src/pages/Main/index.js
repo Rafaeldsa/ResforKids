@@ -54,7 +54,7 @@ const Main = () => {
 
         <Quiz quizId={2} />
         <h1>Desenhos</h1>
-        <Container>
+        <Container className="container-desenhos">
           <Row>
             <Col>
               {' '}

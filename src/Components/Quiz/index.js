@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import api from '../../services/api';
+import useSound from 'use-sound';
 import axios from 'axios';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FiVolume2, FiArrowLeft, FiArrowRight } from 'react-icons/fi';
@@ -10,6 +10,7 @@ const Quiz = ({ quizId }) => {
   const [perguntas, setPerguntas] = useState([]);
   const [imagemPergunta, setImagem] = useState([]);
   const [audio, setAudio] = useState([]);
+  const [indice, setIndice] = useState(0);
 
   useEffect(() => {
     axios({
@@ -32,17 +33,17 @@ const Quiz = ({ quizId }) => {
       setAudio(audioPergunta);
     });
   }, []);
-  console.log(imagemPergunta);
+  console.log(perguntas);
   return (
     <div>
       <div className="containerPergunta">
         <div id="item1">
-          <img src={imagemPergunta[0]} alt="imagem da pergunta" />
+          <img src={imagemPergunta[indice]} alt="imagem da pergunta" />
         </div>
         <div id="item2">
-          <p>{perguntas[1]}</p>
+          <p>{perguntas[indice]}</p>
           <button id="audioPergunta">
-            <FiVolume2 onClick={audio} />
+            <FiVolume2 onClick={audio[indice]} />
           </button>
         </div>
       </div>
@@ -51,24 +52,24 @@ const Quiz = ({ quizId }) => {
         <Row>
           <label htmlFor="01">
             <input type="radio" name="opcao" id="01" value="01" />
-            <img src={imagemPergunta[0]} alt="Masculino" />
+            <img src={imagemPergunta[indice]} alt="Masculino" />
             <p>olaaaa</p>
           </label>
           <label htmlFor="02">
             <input type="radio" name="opcao" id="02" value="02" />
-            <img src={imagemPergunta[0]} alt="Feminino" />
+            <img src={imagemPergunta[indice]} alt="Feminino" />
             <p>olaaaa</p>
           </label>
         </Row>
         <Row>
           <label htmlFor="03">
             <input type="radio" name="opcao" id="03" value="03" />
-            <img src={imagemPergunta[0]} alt="Masculino" />
+            <img src={imagemPergunta[indice]} alt="Masculino" />
             <p>olaaaa</p>
           </label>
           <label htmlFor="04">
             <input type="radio" name="opcao" id="04" value="04" />
-            <img src={imagemPergunta[0]} alt="Feminino" />
+            <img src={imagemPergunta[indice]} alt="Feminino" />
             <p>olaaaa</p>
           </label>
         </Row>
@@ -77,13 +78,29 @@ const Quiz = ({ quizId }) => {
       <Container bsPrefix="acoes">
         <Row>
           <Col>
-            <button id="anterior" onClick={() => {}}>
+            <button
+              id="anterior"
+              onClick={() => {
+                if (indice === 0) {
+                  return;
+                }
+                setIndice(indice - 1);
+              }}
+            >
               <FiArrowLeft />
               <strong>Anterior</strong>
             </button>
           </Col>
           <Col>
-            <button id="proxima" onClick={() => {}}>
+            <button
+              id="proxima"
+              onClick={() => {
+                if (indice === 1) {
+                  return;
+                }
+                setIndice(indice + 1);
+              }}
+            >
               <strong>Próxima</strong>
               <FiArrowRight />
             </button>

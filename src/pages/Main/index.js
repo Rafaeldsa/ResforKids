@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css';
 import { FiArrowDownCircle } from 'react-icons/fi';
-import api from '../../services/api';
+
 import axios from 'axios';
 import { Jumbotron, Container, Row, Col } from 'react-bootstrap';
-import data from './data.json';
-import useSound from 'use-sound';
-import musica from '../../assets/whatever.mp3';
+
 import ResponsivePlayer from '../../Components/ResponsivePlayer';
 import Quiz from '../../Components/Quiz';
 
 const Main = () => {
-  const [play] = useSound(musica);
-
   function download() {
     axios({
       url: 'https://resbackend.herokuapp.com/download', //your url

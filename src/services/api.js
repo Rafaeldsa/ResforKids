@@ -1,7 +1,11 @@
 import axios from 'axios';
 
-const api = axios.create({
-  baseURL: ',https://resbackimagens.herokuapp.com/',
+const imagesApi = axios.create({
+  baseURL: 'https://resbackimagens.herokuapp.com/'
 });
 
-export default api;
+const backendApi = axios.create({
+  baseURL: 'https://resbackend.herokuapp.com/'
+});
+
+export { imagesApi, backendApi };

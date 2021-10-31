@@ -1,27 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import './styles.css';
+import React from 'react';
+import { Jumbotron, Container, Row, Col } from 'react-bootstrap';
 import { FiArrowDownCircle } from 'react-icons/fi';
 
-import axios from 'axios';
-import { Jumbotron, Container, Row, Col } from 'react-bootstrap';
-
+import { backendApi } from '../../services/api';
 import ResponsivePlayer from '../../Components/ResponsivePlayer';
 import Quiz from '../../Components/Quiz';
 
+import './styles.css';
+
 const Main = () => {
-  function download() {
-    axios({
-      url: 'https://resbackend.herokuapp.com/download', //your url
-      method: 'GET',
-      responseType: 'blob', // important
-    }).then((response) => {
-      const url = window.URL.createObjectURL(new Blob([response.data]));
-      const link = document.createElement('a');
-      link.href = url;
-      link.setAttribute('download', 'desenho.jpg'); //or any other extension
-      document.body.appendChild(link);
-      link.click();
+  async function download() {
+    const response = await backendApi.get('download', {
+      responseType: 'blob'
     });
+    const url = window.URL.createObjectURL(new Blob([response.data]));
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', 'desenho.jpg'); //or any other extension
+    document.body.appendChild(link);
+    link.click();
   }
 
   return (
